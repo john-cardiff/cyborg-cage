@@ -90,14 +90,14 @@ def test_DDQN(eps_len=100, num_eps=10, chkpt_dir="model_b_line", red_agent=B_lin
     env = ChallengeWrapper(env=CYBORG, agent_name="Blue")
 
     model_dir = os.path.join(os.getcwd(), "Models", chkpt_dir)
-    # notice that epsilon is set to 0 here. we could also remove most hyperparamters since all we will do is agent.get_action()
+    # the default epsilon is 0. we also don't need to define most hyperparamters since all we will do is agent.get_action()
     agent = DQNAgent(chkpt_dir=model_dir, algo='DDQNAgent',
                      env_name='Scenario1b')
     # gets the checkpoint from model_dir
     agent.load_models()
 
     scores = []
-    # only range 1 here because I just wanted to generate a sample episode
+    
     for i in range(num_eps):
         s = []
         a = []
