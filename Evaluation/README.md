@@ -24,6 +24,8 @@ Our results outperform BlueReactRestoreAgent and BlueReactRemoveAgent. This was 
 
 ### evaluation.py on 10 episodes, with random.seed(1) for reproducibility:
 
+The full output of the evaluation is in MainAgent_10episodes.txt.
+
 *30 length episodes*
 1. steps: 30, adversary: B_lineAgent, mean: -7.799999999999994, standard deviation 1.4142135623730951
 2. steps: 30, adversary: RedMeanderAgent, mean: -5.000000000000001, standard deviation 7.554248252914826
@@ -41,6 +43,8 @@ Our results outperform BlueReactRestoreAgent and BlueReactRemoveAgent. This was 
 
 ### evaluation.py on 100 episodes, with random.seed(1) for reproducibility:
 
+The full output of the evaluation is in MainAgent_100episodes.txt.
+
 *30 length episodes*
 1. steps: 30, adversary: B_lineAgent, mean: -8.809999999999995, standard deviation 4.678545487519375
 2. steps: 30, adversary: RedMeanderAgent, mean: -5.6899999999999995, standard deviation 5.591290124159652
@@ -57,6 +61,8 @@ Our results outperform BlueReactRestoreAgent and BlueReactRemoveAgent. This was 
 3. steps: 100, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
 
 ### evaluation.py on 1000 episodes, with random.seed(1) for reproducibility:
+
+The full output of the evaluation is in MainAgent_1000episodes.txt.
 
 *30 length episodes*
 1. steps: 30, adversary: B_lineAgent, mean: -8.989999999999995, standard deviation 5.08623335777762
