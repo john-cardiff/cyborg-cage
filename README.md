@@ -34,7 +34,7 @@ The Evaluation folder contains the evaluation.py file and an .md file discussing
 
 # Dependencies
 
-There are very few dependencies: pytorch, numpy and matplotlib.
+There are very few dependencies: pytorch (with cuda), numpy and matplotlib.
 
 # Thank you
 
