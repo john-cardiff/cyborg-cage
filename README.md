@@ -1,9 +1,11 @@
 # Cage-submission
 
-Due to red agents’ behaviours not changing mid-episode, and the fact that they are predictable, we thought that fingerprinting the agent we are facing and then assigning it to a trained model made the most sense. If multiple red agents could exist in the environment in parallel, or if the red agents could change behaviour mid-episode, or if noise was added (Green Agent and the Misinform red action for example), then we would have applied hierarchical RL or utilised an RNN (which we expect to do in the second version of the challenge).
+Due to red agents’ behaviours not changing mid-episode, and the fact that they are predictable, we thought that fingerprinting the agent we are facing and then assigning it to a trained model made the most sense. If multiple red agents could exist in the environment in parallel, or if the red agents could change behaviour mid-episode, or if noise was added (Green Agent), then we would have applied hierarchical RL or utilised an RNN (which we expect to do in the second version of the challenge).
 In addition, due to the action space being small (the blue agent cannot perform multiple actions at once, i.e restore multiple hosts for instance), we felt that reinforcement learning was appropriate, however in reality the action spaces for the defender (and attacker) would be too large for our approach.
 
 As a result, we trained two models using DDQN for B_line and Meander. We also experimented with regular Q-learning for B_line after reducing the action and observation spaces, this was successful, but is not included in this submission as it does not add any value. This approach was however interesting to analyse the largest and smallest Q-values to confirm our suspicions.
+
+Finally, it should be noted that we have not considered the Misinform action because it was not in the initial release. This made sense as the Green Agent does not figure in the evaluation.
 
 # Agents
 
