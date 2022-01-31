@@ -37,7 +37,7 @@ The Evaluation folder contains the evaluation.py file and an .md file discussing
 
 There are very few dependencies: pytorch (with cuda), numpy and matplotlib.
 
-In addition we have not update the challenge to version 1.2, therefore the action space for the blue agent remains Discrete(41).
+In addition, we have not update the challenge to version 1.2, therefore the action space for the blue agent remains Discrete(41).
 
 # Thank you
 
