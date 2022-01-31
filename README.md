@@ -32,11 +32,12 @@ The train.py and utils.py files are included in the root directory for completen
 
 # Evaluation
 
-The Evaluation folder contains the evaluation.py file and an .md file discussing our approach's strengths and weaknesses.
-
+The Evaluation folder contains the evaluation.py file and an .md file discussing our approach's strengths and weakne
 # Dependencies
 
 There are very few dependencies: pytorch (with cuda), numpy and matplotlib.
+
+In addition we have not update the challenge to version 1.2, therefore the action space for the blue agent remains Discrete(41).
 
 # Thank you
 
