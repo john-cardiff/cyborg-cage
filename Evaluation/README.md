@@ -1,8 +1,6 @@
 # Discussion
 
-Unfortunately, we had a very limited amount of time to dedicate to the challenge, and as a result we did little tuning of the hyperparameters to train the DDQN models. We also failed to perform a thorough analysis of the behaviour of our models, beyond analysing the highest Q-values which indicate that the blue agent likes getting stuck in an Analyse/Remove loop of an Enterprise server for B_line, and discovering the Remove Enterprise 0 and Remove Enterprise 1 loop for Meander. Finally, we did not compare DDQN to other algorithms (such as PPO).
-
-However, we believe that using a MainAgent which fingerprints the adversary and assigns a defending agent profile, is likely the best approach (assuming the agents it selects are “optimal”) due to the red agent’s behaviour not changing mid-episode and that the first few steps (used for fingerprinting) set as “Sleep” for the blue agent does not downgrade the performance. We considered informing the MainAgent once an episode ends (with agent.end_episode()), however we felt this would not accurately represent the challenge (as it was not in the original evaluation.py file) and as a result the fingerprinting does not use this information.
+We believe that using a MainAgent which fingerprints the adversary and assigns a defending agent profile, is likely the best approach (assuming the agents it selects are “optimal”) due to the red agent’s behaviour not changing mid-episode and that the first few steps (used for fingerprinting) set as “Sleep” for the blue agent does not downgrade the performance. We considered informing the MainAgent once an episode ends (with agent.end_episode()), however we felt this would not accurately represent the challenge (as it was not in the original evaluation.py file) and as a result the fingerprinting does not use this information.
 
 We also speculate that after fingerprinting the red agent, the best strategy for MainAgent may be to call an ensemble of different B_line and Meander blue agent models. However, given that we implemented a single approach, this was not possible.
 
@@ -12,6 +10,18 @@ To fingerprint the red agent, we sum the past two 52-bit observations and hard-c
         meander_fingerprinted = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         bline_fingerprinted = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         bline_fingerprinted_2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        
+Finally, for the B_line blue agent, we reduced the possible random actions in our epsilon greedy exploration to ones which may be useful. This signaficantly improved our training.
+
+        def get_action(self, observation, action_space=None):
+                if np.random.random() > self.epsilon:
+                        state = T.tensor([observation], dtype=T.float).to(self.q_eval.device)
+                        actions = self.q_eval.forward(state)
+                        action = T.argmax(actions).item()
+                else:
+                        #action = np.random.choice(self.action_space)
+                        possibly_useful_actions_bline = [0,1,4,5,9,10,11,17,18,22,23,24,30,31,35,36,37]
+                        action = random.choice(possibly_useful_actions_bline)
 
 
 Overall, we feel that version 1 served as a good introduction to the challenge, and we look forward to version 2.
