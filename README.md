@@ -32,7 +32,7 @@ The train.py and utils.py files are included in the root directory for completen
 
 # Evaluation
 
-The Evaluation folder contains the evaluation.py file and an .md file discussing our approach's strengths and weakne
+The Evaluation folder contains the evaluation.py file and an .md file discussing our approach's strengths and weaknesses.
 # Dependencies
 
 There are very few dependencies: pytorch (with cuda), numpy and matplotlib.
