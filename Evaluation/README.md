@@ -32,44 +32,6 @@ Overall, we feel that version 1 served as a good introduction to the challenge, 
 
 Our results outperform BlueReactRestoreAgent and BlueReactRemoveAgent. This was checked in benchmarks.py
 
-### evaluation.py on 10 episodes, with random.seed(1) for reproducibility:
-
-The full output of the evaluation is in MainAgent_10episodes.txt.
-
-*30 length episodes*
-1. steps: 30, adversary: B_lineAgent, mean: -7.799999999999994, standard deviation 1.4142135623730951
-2. steps: 30, adversary: RedMeanderAgent, mean: -5.000000000000001, standard deviation 7.554248252914826
-3. steps: 30, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
-
-*50 length episodes*
-1. steps: 50, adversary: B_lineAgent, mean: -11.999999999999988, standard deviation 3.675746333890725
-2. steps: 50, adversary: RedMeanderAgent, mean: -15.899999999999999, standard deviation 19.994721525664946
-3. steps: 50, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
-
-*100 length episodes*
-1. steps: 100, adversary: B_lineAgent, mean: -19.500000000000018, standard deviation 3.945461527713438
-2. steps: 100, adversary: RedMeanderAgent, mean: -69.99999999999996, standard deviation 35.567775677805095
-3. steps: 100, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
-
-### evaluation.py on 100 episodes, with random.seed(1) for reproducibility:
-
-The full output of the evaluation is in MainAgent_100episodes.txt.
-
-*30 length episodes*
-1. steps: 30, adversary: B_lineAgent, mean: -8.809999999999995, standard deviation 4.678545487519375
-2. steps: 30, adversary: RedMeanderAgent, mean: -5.6899999999999995, standard deviation 5.591290124159652
-3. steps: 30, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
-
-*50 length episodes*
-1. steps: 50, adversary: B_lineAgent, mean: -14.559999999999992, standard deviation 12.409771321117265
-2. steps: 50, adversary: RedMeanderAgent, mean: -11.92, standard deviation 11.845026233176801
-3. steps: 50, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
-
-*100 length episodes*
-1. steps: 100, adversary: B_lineAgent, mean: -23.92, standard deviation 20.69269133649544
-2. steps: 100, adversary: RedMeanderAgent, mean: -45.449999999999974, standard deviation 42.93391092214526
-3. steps: 100, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
-
 ### evaluation.py on 1000 episodes, with random.seed(1) for reproducibility:
 
 The full output of the evaluation is in MainAgent_1000episodes.txt.
