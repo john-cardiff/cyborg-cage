@@ -11,7 +11,7 @@ To fingerprint the red agent, we sum the past two 52-bit observations and hard-c
         bline_fingerprinted = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         bline_fingerprinted_2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         
-Finally, for the B_line blue agent, we reduced the possible random actions in our epsilon greedy exploration to ones which may be useful. This signaficantly improved our training.
+Finally, for the B_line blue agent, we reduced the possible random actions in our epsilon greedy exploration to ones which may be useful. This significantly improved our training.
 
         def get_action(self, observation, action_space=None):
                 if np.random.random() > self.epsilon:
@@ -37,16 +37,18 @@ Our results outperform BlueReactRestoreAgent and BlueReactRemoveAgent. This was 
 The full output of the evaluation is in MainAgent_1000episodes.txt.
 
 *30 length episodes*
-1. steps: 30, adversary: B_lineAgent, mean: -8.989999999999995, standard deviation 5.08623335777762
-2. steps: 30, adversary: RedMeanderAgent, mean: -5.034, standard deviation 5.7042951346317095
+1. steps: 30, adversary: B_lineAgent, mean: -4.504999999999999, standard deviation 2.713916052559536
+2. steps: 30, adversary: RedMeanderAgent, mean: -4.642, standard deviation 4.446842746310062
 3. steps: 30, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
 
 *50 length episodes*
-1. steps: 50, adversary: B_lineAgent, mean: -13.63899999999999, standard deviation 10.273783608273527
-2. steps: 50, adversary: RedMeanderAgent, mean: -12.956999999999999, standard deviation 15.101457049073282
+1. steps: 50, adversary: B_lineAgent, mean: -8.309999999999995, standard deviation 4.62701948443156
+2. steps: 50, adversary: RedMeanderAgent, mean: -9.245899999999999, standard deviation 5.935207652633555
 3. steps: 50, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
 
 *100 length episodes*
-1. steps: 100, adversary: B_lineAgent, mean: -27.204999999999995, standard deviation 28.246714000956803
-2. steps: 100, adversary: RedMeanderAgent, mean: -55.54979999999996, standard deviation 49.9558970654277
+1. steps: 100, adversary: B_lineAgent, mean: -17.549999999999994, standard deviation 8.43009884678505
+2. steps: 100, adversary: RedMeanderAgent, mean: -23.9663, standard deviation 15.566763261141613
 3. steps: 100, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
+
+### Total score: -68.2192
