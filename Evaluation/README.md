@@ -50,29 +50,3 @@ The full output of the evaluation is in MainAgent_1000episodes.txt.
 1. steps: 100, adversary: B_lineAgent, mean: -27.204999999999995, standard deviation 28.246714000956803
 2. steps: 100, adversary: RedMeanderAgent, mean: -55.54979999999996, standard deviation 49.9558970654277
 3. steps: 100, adversary: SleepAgent, mean: 0.0, standard deviation 0.0
-
-# Cheat check
-
-We implemented cheat_check.py to shuffle the order in which the red agents will appear, otherwise the MainAgent would be trivial. Cheat_check.py then sums over all the scores (therefore it would need to be divided by the number of episodes for it to be comparable to evaluation.py). We noticed no statistical difference between cheat_check.py and evaluation.py outputs.
-
-### cheat_check.py on 10 episodes, with random.seed(1) for reproducibility:
-
-*30 length episodes*
-{'Sleep': 0.0, 'B_line': -75.99999999999996, 'Meander': -38.0}
-
-*50 length episodes*
-{'Sleep': 0.0, 'B_line': -109.99999999999984, 'Meander': -76.99999999999999}
-
-*100 length episodes*
-{'Sleep': 0.0, 'B_line': -218.00000000000017, 'Meander': -572.9999999999998}
-
-### cheat_check.py on 100 episodes, with random.seed(1) for reproducibility:
-
-*30 length episodes*
-{'Sleep': 0.0, 'B_line': -919.9999999999982, 'Meander': -590.9999999999997}
-
-*50 length episodes*
-{'Sleep': 0.0, 'B_line': -1391.9999999999973, 'Meander': -1373.0000000000027}
-
-*100 length episodes*
-{'Sleep': 0.0, 'B_line': -2630.0000000000014, 'Meander': -5278.999999999988}
